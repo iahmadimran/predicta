@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📈 Predicta – Real-Time AI-Powered Stock Insights  
 
-## Getting Started
+MarketMind is a **real-time stock market web app** built with **Next.js, Better Auth, and Inngest**.  
+It delivers **live stock prices, interactive charts, personalized alerts, AI-powered insights, and curated financial news summaries** — all in one sleek dashboard.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✅ **Real-Time Prices** – Live stock market data with instant updates  
+✅ **Interactive Charts** – Zoomable, customizable charts with indicators  
+✅ **Personalized Watchlists** – Save and track your favorite stocks  
+✅ **Smart Alerts** – Get notified on price thresholds & patterns  
+✅ **AI-Powered Insights** – Actionable AI-driven signals & trend analysis  
+✅ **Daily News Digest** – Summarized financial news tailored to you  
+✅ **Automated Reports** – Inngest-powered workflows for daily/weekly updates  
+✅ **Secure Authentication** – Better Auth with email + OAuth  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack  
 
-## Learn More
+- **Framework:** [Next.js](https://nextjs.org/)  
+- **Auth:** [Better Auth](https://better-auth.com/)  
+- **Automation:** [Inngest](https://www.inngest.com/)  
+- **Charts:** Recharts / TradingView Widget  
+- **Database:** PostgreSQL / Supabase  
+- **Styling:** Tailwind CSS + shadcn/ui  
+- **AI Layer:** OpenAI / HuggingFace  
+- **Hosting:** Vercel + Serverless Functions  
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
