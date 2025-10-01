@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   }
   return (
 
-    <main className="min-h-screen text-gray-400">
+    <main className="min-h-screen font-inter-app text-gray-400">
       <Header user={user} />
       <div className="container py-10">
         {children}
