@@ -9,6 +9,8 @@ import { useForm } from 'react-hook-form'
 import { CountrySelectField } from "@/components/forms/CountrySelectField";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { signUpWithEmail } from "@/lib/actions/auth.actions";
+import { toast } from "sonner";
 
 const SignUp = () => {
   const pathname = usePathname()
@@ -31,15 +33,18 @@ const SignUp = () => {
     },
     mode: 'onBlur'
   })
+
   const onSubmit = async (data: SignUpFormData) => {
     try {
-      console.log(data);
+      const result = await signUpWithEmail(data)
+      if(result.success) router.push('/') 
     } catch (error) {
       console.log(error);
+      toast.error('Sign Up failed', {
+        description: error instanceof Error ? error.message : 'Failed to create an account'
+      })
     }
   }
-
-  const options = useMemo(() => countryList().getData(), [])
 
   return (
     <>
