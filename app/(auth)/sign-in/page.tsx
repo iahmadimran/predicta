@@ -1,13 +1,15 @@
 'use client';
-import InputField from '@/components/forms/InputField';
+
+import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
-import { useForm } from 'react-hook-form'
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import InputField from '@/components/forms/InputField';
+import { signInWithEmail } from "@/lib/actions/auth.actions";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import FooterLink from '@/components/forms/FooterLink';
 
 const SignIn = () => {
-  const pathname = usePathname()
-
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -17,58 +19,52 @@ const SignIn = () => {
       email: '',
       password: '',
     },
-    mode: 'onBlur'
-  })
-  
+    mode: 'onBlur',
+  });
+
   const onSubmit = async (data: SignInFormData) => {
     try {
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+      const result = await signInWithEmail(data);
+      if (result.success) router.push('/');
+    } catch (e) {
+      console.error(e);
+      toast.error('Sign in failed', {
+        description: e instanceof Error ? e.message : 'Failed to sign in.'
+      })
     }
   }
 
   return (
     <>
-      <h1 className='form-title'>Log In to Your Account</h1>
+      <h1 className="form-title">Welcome back</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <InputField
-          name='email'
-          label='Email'
-          placeholder="john@example.com"
+          name="email"
+          label="Email"
+          placeholder="johndoe@example.com"
           register={register}
           error={errors.email}
-          validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/, message: 'Email Address is required' }}
+          validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/ }}
         />
 
         <InputField
-          name='password'
-          label='Password'
-          placeholder="Enter a strong password"
-          type='password'
+          name="password"
+          label="Password"
+          placeholder="Enter your password"
+          type="password"
           register={register}
           error={errors.password}
           validation={{ required: 'Password is required', minLength: 8 }}
         />
 
-        <Button type='submit' disabled={isSubmitting} className='yellow-btn w-full mt-5'>
-          {isSubmitting ? 'Logging In' : 'Log In'}
+        <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
+          {isSubmitting ? 'Signing In' : 'Sign In'}
         </Button>
 
-        <div className="text-center pt-2">
-          <p className="text-sm text-gray-500">
-            {pathname === '/sign-in' ? "Don't have an account?" : "Already have an account?"}{` `}
-            
-            <Link href={pathname === '/sign-in' ? '/sign-up' : '/sign-in'} className="footer-link">
-              {' '}{pathname === '/sign-in' ? "Sign Up" : "Sign In"}
-            </Link>
-          </p>
-        </div>
+        <FooterLink text="Don't have an account?" linkText="Create an account" href="/sign-up" />
       </form>
     </>
-  )
-}
-
-export default SignIn
-
+  );
+};
+export default SignIn;
