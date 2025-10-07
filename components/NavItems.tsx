@@ -5,8 +5,7 @@ import Link from "next/link";
 import {usePathname} from "next/navigation";
 import SearchCommand from "@/components/SearchCommand";
 
-// {initialStocks}: { initialStocks: StockWithWatchlistStatus[]}
-const NavItems = () => {
+const NavItems = ({initialStocks}: { initialStocks: StockWithWatchlistStatus[]}) => {
     const pathname = usePathname()
 
     const isActive = (path: string) => {
@@ -23,7 +22,7 @@ const NavItems = () => {
                         <SearchCommand
                             renderAs="text"
                             label="Search"
-                            // initialStocks={initialStocks}
+                            initialStocks={initialStocks}
                         />
                     </li>
                 )
