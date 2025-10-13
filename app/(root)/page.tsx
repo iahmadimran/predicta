@@ -4,7 +4,7 @@ import { HEATMAP_WIDGET_CONFIG, MARKET_DATA_WIDGET_CONFIG, MARKET_OVERVIEW_WIDGE
 export default function Home() {
   const widgetTypes = {
     marketOverview: 'market-overview',
-    stockHeatmap: 'stock-heatmap',
+    cryptoHeatmap: 'crypto-coins-heatmap',
     advancedChart: 'advanced-chart',
     marketQuotes: 'market-quotes',
     timeline: 'timeline'
@@ -24,8 +24,8 @@ export default function Home() {
         </div>
         <div className="md:col-span-1 xl:col-span-2">
           <TradingViewWidget
-            title="Stock Heatmap"
-            scriptUrl={`https://s3.tradingview.com/external-embedding/embed-widget-${widgetTypes.stockHeatmap}.js`}
+            title="Crypto Heatmap"
+            scriptUrl={`https://s3.tradingview.com/external-embedding/embed-widget-${widgetTypes.cryptoHeatmap}.js`}
             config={HEATMAP_WIDGET_CONFIG}
             height={600}
           />

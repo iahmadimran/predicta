@@ -9,45 +9,45 @@ You MUST create content that is obviously tailored to THIS specific user by:
 IMPORTANT: Do NOT start the personalized content with "Welcome" since the email header already says "Welcome aboard {{name}}". Use alternative openings like "Thanks for joining", "Great to have you", "You're all set", "Perfect timing", etc.
 
 1. **Direct Reference to User Details**: Extract and use specific information from their profile:
-   - Their exact investment goals or objectives
+   - Their exact crypto investment goals or objectives
    - Their stated risk tolerance level
-   - Their preferred sectors/industries mentioned
+   - Their preferred crypto sectors or blockchain ecosystems (e.g., DeFi, Layer-2s, AI tokens)
    - Their experience level or background
-   - Any specific stocks/companies they're interested in
-   - Their investment timeline (short-term, long-term, retirement)
+   - Any specific crypto assets or projects they're interested in
+   - Their investment timeline (short-term trading, long-term holding, portfolio diversification)
 
 2. **Contextual Messaging**: Create content that shows you understand their situation:
-   - New investors → Reference learning/starting their journey
-   - Experienced traders → Reference advanced tools/strategy enhancement  
-   - Retirement planning → Reference building wealth over time
-   - Specific sectors → Reference those exact industries by name
-   - Conservative approach → Reference safety and informed decisions
-   - Aggressive approach → Reference opportunities and growth potential
+   - New crypto investors → Reference learning and starting their journey
+   - Experienced traders → Reference advanced analytics or portfolio tracking tools  
+   - Long-term holders → Reference building wealth through consistent accumulation
+   - Specific ecosystems → Reference those exact blockchains or sectors by name
+   - Conservative approach → Reference risk management and stable assets
+   - Aggressive approach → Reference high-potential altcoins and growth opportunities
 
 3. **Personal Touch**: Make it feel like it was written specifically for them:
-   - Use their goals in your messaging
-   - Reference their interests directly
-   - Connect features to their specific needs
-   - Make them feel understood and seen
+   - Use their crypto goals in your messaging
+   - Reference their preferred projects or blockchain ecosystems directly
+   - Connect platform features to their specific needs
+   - Make them feel understood and seen as a unique investor
 
 CRITICAL FORMATTING REQUIREMENTS:
 - Return ONLY clean HTML content with NO markdown, NO code blocks, NO backticks
 - Use SINGLE paragraph only: <p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">content</p>
 - Write exactly TWO sentences (add one more sentence than current single sentence)
 - Keep total content between 35-50 words for readability
-- Use <strong> for key personalized elements (their goals, sectors, etc.)
+- Use <strong> for key personalized elements (their goals, projects, tokens, etc.)
 - DO NOT include "Here's what you can do right now:" as this is already in the template
 - Make every word count toward personalization
 - Second sentence should add helpful context or reinforce the personalization
 
 Example personalized outputs (showing obvious customization with TWO sentences):
-<p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">Thanks for joining Predicta! As someone focused on <strong>technology growth stocks</strong>, you'll love our real-time alerts for companies like the ones you're tracking. We'll help you spot opportunities before they become mainstream news.</p>
+<p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">Thanks for joining Predicta! As someone focused on <strong>DeFi and Layer-1 growth tokens</strong>, you'll love our real-time alerts for projects like the ones you're tracking. We'll help you spot promising moves before they trend across the market.</p>
 
-<p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">Great to have you aboard! Perfect for your <strong>conservative retirement strategy</strong> — we'll help you monitor dividend stocks without overwhelming you with noise. You can finally track your portfolio progress with confidence and clarity.</p>
+<p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">Great to have you aboard! Perfect for your <strong>conservative long-term strategy</strong> — we'll help you monitor stable assets and staking rewards without the noise. You can finally track your crypto portfolio with clarity and confidence.</p>
 
-<p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">You're all set! Since you're new to investing, we've designed simple tools to help you build confidence while learning the <strong>healthcare sector</strong> you're interested in. Our beginner-friendly alerts will guide you without the confusing jargon.</p>`
+<p class="mobile-text" style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">You're all set! Since you're new to crypto investing, we've built easy tools to help you learn about the <strong>AI and gaming tokens</strong> you're exploring. Our beginner-friendly updates will guide you through your journey without the confusing jargon.</p>`
 
-export const NEWS_SUMMARY_EMAIL_PROMPT = `Generate HTML content for a market news summary email that will be inserted into the NEWS_SUMMARY_EMAIL_TEMPLATE at the {{newsContent}} placeholder.
+export const NEWS_SUMMARY_EMAIL_PROMPT = `Generate HTML content for a crypto market news summary email that will be inserted into the NEWS_SUMMARY_EMAIL_TEMPLATE at the {{newsContent}} placeholder.
 
 News data to summarize:
 {{newsData}}
@@ -63,9 +63,9 @@ SECTION HEADINGS (for categories like "Market Highlights", "Top Movers", etc.):
 PARAGRAPHS (for news content):
 <p class="mobile-text dark-text-secondary" style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">Content goes here</p>
 
-STOCK/COMPANY MENTIONS:
-<strong style="color: #FDD458;">Stock Symbol</strong> for ticker symbols
-<strong style="color: #CCDADC;">Company Name</strong> for company names
+CRYPTO/PROJECT MENTIONS:
+<strong style="color: #FDD458;">Crypto Symbol</strong> for ticker symbols
+<strong style="color: #CCDADC;">Project Name</strong> for crypto project or blockchain names
 
 PERFORMANCE INDICATORS:
 Use 📈 for gains, 📉 for losses, 📊 for neutral/mixed
@@ -98,14 +98,14 @@ Use this format with clear, concise explanations (no label needed):
     <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Brief explanation with key numbers and what they mean in everyday language.
   </li>
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Simple takeaway about what this means for regular people's money.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Simple takeaway about what this means for regular crypto investors or traders.
   </li>
 </ul>
 
 INSIGHT SECTION:
 Add simple context explanation:
 <div style="background-color: #141414; border: 1px solid #374151; padding: 15px; border-radius: 6px; margin: 16px 0;">
-<p class="dark-text-secondary" style="margin: 0; font-size: 14px; color: #CCDADC; line-height: 1.4;">💡 <strong style="color: #FDD458;">Bottom Line:</strong> Simple explanation of why this news matters to your money in everyday language.</p>
+<p class="dark-text-secondary" style="margin: 0; font-size: 14px; color: #CCDADC; line-height: 1.4;">💡 <strong style="color: #FDD458;">Bottom Line:</strong> Simple explanation of why this news matters to your crypto portfolio in everyday language.</p>
 </div>
 
 READ MORE BUTTON:
@@ -122,20 +122,20 @@ Between major sections, use:
 <div style="border-top: 1px solid #374151; margin: 32px 0 24px 0;"></div>
 
 Content guidelines:
-- Organize news into logical sections with icons (📊 Market Overview, 📈 Top Gainers, 📉 Top Losers, 🔥 Breaking News, 💼 Earnings Reports, 🏛️ Economic Data, etc.)
+- Organize news into logical sections with icons (📊 Market Overview, 📈 Top Gainers, 📉 Top Losers, 🔥 Breaking News, 💼 Exchange Updates, 🏛️ Regulatory News, etc.)
 - NEVER repeat section headings - use each section type only once per email
 - For each news article, include its actual headline/title from the news data
 - Provide MINIMUM 3 CONCISE bullet points (NO "Key Takeaways" label - start directly with bullets)
 - Each bullet should be SHORT and EASY TO UNDERSTAND - one clear sentence preferred
 - Use PLAIN ENGLISH - avoid jargon, complex financial terms, or insider language
-- Explain concepts as if talking to someone new to investing
+- Explain crypto concepts simply (like gas fees, staking, halving, or market cap)
 - Include specific numbers but explain what they mean in simple terms
 - Add "Bottom Line" context in everyday language anyone can understand
 - Use clean, light design with yellow bullets for better readability
 - Make each article easy to scan with clear spacing and structure
 - Always include simple "Read Full Story" buttons with actual URLs
-- Focus on PRACTICAL insights regular people can understand and use
-- Explain what the news means for regular investors' money
+- Focus on PRACTICAL insights regular crypto users can understand and use
+- Explain what the news means for regular investors’ or traders’ portfolios
 - Keep language conversational and accessible to everyone
 - Prioritize BREVITY and CLARITY over detailed explanations
 
@@ -144,23 +144,23 @@ Example structure:
 
 <div class="dark-info-box" style="background-color: #212328; padding: 24px; margin: 20px 0; border-radius: 8px;">
 <h4 class="dark-text" style="margin: 0 0 16px 0; font-size: 18px; font-weight: 600; color: #FDD458; line-height: 1.4;">
-Stock Market Had Mixed Results Today
+Crypto Market Had Mixed Results Today
 </h4>
 
 <ul style="margin: 16px 0 20px 0; padding-left: 0; margin-left: 0; list-style: none;">
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Tech stocks like Apple went up 1.2% today, which is good news for tech investors.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Bitcoin gained 1.2% today, showing renewed confidence among crypto investors.
   </li>
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Traditional companies went down 0.3%, showing investors prefer tech right now.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Altcoins like Solana and Avalanche slipped slightly, showing rotation into large caps.
   </li>
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>High trading volume (12.4 billion shares) shows investors are confident and active.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Overall crypto trading volume rose 12.4%, indicating high market activity.
   </li>
 </ul>
 
 <div style="background-color: #141414; border: 1px solid #374151; padding: 15px; border-radius: 6px; margin: 16px 0;">
-<p class="dark-text-secondary" style="margin: 0; font-size: 14px; color: #CCDADC; line-height: 1.4;">💡 <strong style="color: #FDD458;">Bottom Line:</strong> If you own tech stocks, today was good for you. If you're thinking about investing, tech companies might be a smart choice right now.</p>
+<p class="dark-text-secondary" style="margin: 0; font-size: 14px; color: #CCDADC; line-height: 1.4;">💡 <strong style="color: #FDD458;">Bottom Line:</strong> If you hold Bitcoin or major altcoins, today brought mixed opportunities. Large-cap cryptos showed strength while smaller tokens cooled off.</p>
 </div>
 
 <div style="margin: 20px 0 0 0;">
@@ -174,23 +174,23 @@ Stock Market Had Mixed Results Today
 
 <div class="dark-info-box" style="background-color: #212328; padding: 24px; margin: 20px 0; border-radius: 8px;">
 <h4 class="dark-text" style="margin: 0 0 16px 0; font-size: 18px; font-weight: 600; color: #FDD458; line-height: 1.4;">
-Apple Stock Jumped After Great Earnings Report
+Solana Surged After Major Network Upgrade
 </h4>
 
 <ul style="margin: 16px 0 20px 0; padding-left: 0; margin-left: 0; list-style: none;">
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Apple stock jumped 5.2% after beating earnings expectations.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Solana jumped 5.2% after successfully deploying a major performance upgrade.
   </li>
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>iPhone sales expected to grow 8% next quarter despite economic uncertainty.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Developer activity and DeFi volume both spiked, signaling strong ecosystem health.
   </li>
   <li class="dark-text-secondary" style="margin: 0 0 16px 0; padding: 0; margin-left: 0; font-size: 16px; line-height: 1.6; color: #CCDADC;">
-    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>App store and services revenue hit $22.3 billion (up 14%), providing steady income.
+    <span style="color: #FDD458; font-weight: bold; font-size: 20px; margin-right: 8px;">•</span>Solana’s market cap crossed $75B, solidifying its place among top 5 crypto assets.
   </li>
 </ul>
 
 <div style="background-color: #141414; border: 1px solid #374151; padding: 15px; border-radius: 6px; margin: 16px 0;">
-<p class="dark-text-secondary" style="margin: 0; font-size: 14px; color: #CCDADC; line-height: 1.4;">💡 <strong style="color: #FDD458;">Bottom Line:</strong> Apple is making money in different ways (phones AND services), so it's a pretty safe stock to own even when the economy gets shaky.</p>
+<p class="dark-text-secondary" style="margin: 0; font-size: 14px; color: #CCDADC; line-height: 1.4;">💡 <strong style="color: #FDD458;">Bottom Line:</strong> Solana’s growth shows investor confidence in its scalability and strong DeFi adoption, making it a key crypto to watch.</p>
 </div>
 
 <div style="margin: 20px 0 0 0;">
@@ -198,21 +198,21 @@ Apple Stock Jumped After Great Earnings Report
 </div>
 </div>`
 
-export const TRADINGVIEW_SYMBOL_MAPPING_PROMPT = `You are an expert in financial markets and trading platforms. Your task is to find the correct TradingView symbol that corresponds to a given Finnhub stock symbol.
+export const TRADINGVIEW_SYMBOL_MAPPING_PROMPT = `You are an expert in cryptocurrency markets and trading platforms. Your task is to find the correct TradingView symbol that corresponds to a given Finnhub Crypto symbol.
 
-Stock information from Finnhub:
+Crypto information from Finnhub:
 Symbol: {{symbol}}
-Company: {{company}}
+Name: {{company}}
 Exchange: {{exchange}}
 Currency: {{currency}}
 Country: {{country}}
 
 IMPORTANT RULES:
-1. TradingView uses specific symbol formats that may differ from Finnhub
-2. For US stocks: Usually just the symbol (e.g., AAPL for Apple)
-3. For international stocks: Often includes exchange prefix (e.g., NASDAQ:AAPL, NYSE:MSFT, LSE:BARC)
-4. Some symbols may have suffixes for different share classes
-5. ADRs and foreign stocks may have different symbol formats
+1. TradingView uses specific symbol formats that may differ from Finnhub.
+2. For major crypto pairs: Usually formatted as "EXCHANGE:SYMBOL" (e.g., BINANCE:BTCUSDT, COINBASE:ETHUSD).
+3. Ensure the quote currency (e.g., USDT, USD, BTC, ETH) is included in the symbol.
+4. Use the most popular and actively traded exchange if multiple exist (e.g., prefer BINANCE:BTCUSDT over smaller exchanges).
+5. Some cryptocurrencies may have different symbols across exchanges (e.g., Binance vs Coinbase versions).
 
 RESPONSE FORMAT:
 Return ONLY a valid JSON object with this exact structure:
@@ -223,8 +223,9 @@ Return ONLY a valid JSON object with this exact structure:
 }
 
 EXAMPLES:
-- Apple Inc. (AAPL) from Finnhub → {"tradingViewSymbol": "NASDAQ:AAPL", "confidence": "high", "reasoning": "Apple trades on NASDAQ as AAPL"}
-- Microsoft Corp (MSFT) from Finnhub → {"tradingViewSymbol": "NASDAQ:MSFT", "confidence": "high", "reasoning": "Microsoft trades on NASDAQ as MSFT"}
-- Barclays PLC (BARC.L) from Finnhub → {"tradingViewSymbol": "LSE:BARC", "confidence": "high", "reasoning": "Barclays trades on London Stock Exchange as BARC"}
+- Bitcoin (BTC) from Finnhub → {"tradingViewSymbol": "BINANCE:BTCUSDT", "confidence": "high", "reasoning": "Bitcoin is most actively traded on Binance against USDT"}
+- Ethereum (ETH) from Finnhub → {"tradingViewSymbol": "COINBASE:ETHUSD", "confidence": "high", "reasoning": "Ethereum is traded on Coinbase with USD pair"}
+- Solana (SOL) from Finnhub → {"tradingViewSymbol": "BINANCE:SOLUSDT", "confidence": "high", "reasoning": "Solana is most liquid on Binance with the USDT trading pair"}
 
 Your response must be valid JSON only. Do not include any other text.`
+

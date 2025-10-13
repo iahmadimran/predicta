@@ -2,7 +2,7 @@
 'use server';
 
 import { getDateRange, validateArticle, formatArticle } from '@/lib/utils';
-import { POPULAR_STOCK_SYMBOLS } from '@/lib/constants';
+import { POPULAR_CRYPTO_SYMBOLS } from '@/lib/constants';
 import { cache } from 'react';
 
 const FINNHUB_BASE_URL = 'https://finnhub.io/api/v1';
@@ -104,7 +104,7 @@ export const searchStocks = cache(async (query?: string): Promise<StockWithWatch
     const token = process.env.FINNHUB_API_KEY ?? NEXT_PUBLIC_FINNHUB_API_KEY;
     if (!token) {
       // If no token, log and return empty to avoid throwing per requirements
-      console.error('Error in stock search:', new Error('FINNHUB API key is not configured'));
+      console.error('Error in crypto search:', new Error('FINNHUB API key is not configured'));
       return [];
     }
 
@@ -114,9 +114,9 @@ export const searchStocks = cache(async (query?: string): Promise<StockWithWatch
 
     if (!trimmed) {
       // Fetch top 10 popular symbols' profiles
-      const top = POPULAR_STOCK_SYMBOLS.slice(0, 10);
+      const top = POPULAR_CRYPTO_SYMBOLS.slice(0, 10);
       const profiles = await Promise.all(
-        top.map(async (sym) => {
+        top.map(async (sym: string | number | boolean) => {
           try {
             const url = `${FINNHUB_BASE_URL}/stock/profile2?symbol=${encodeURIComponent(sym)}&token=${token}`;
             // Revalidate every hour

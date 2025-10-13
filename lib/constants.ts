@@ -38,73 +38,69 @@ export const CONDITION_OPTIONS = [
 
 // TradingView Charts
 export const MARKET_OVERVIEW_WIDGET_CONFIG = {
-    colorTheme: 'dark', // dark mode
-    dateRange: '12M', // last 12 months
-    locale: 'en', // language
-    largeChartUrl: '', // link to a large chart if needed
-    isTransparent: true, // makes background transparent
-    showFloatingTooltip: true, // show tooltip on hover
-    plotLineColorGrowing: '#0FEDBE', // line color when price goes up
-    plotLineColorFalling: '#0FEDBE', // line color when price falls
-    gridLineColor: 'rgba(240, 243, 250, 0)', // grid line color
-    scaleFontColor: '#DBDBDB', // font color for scale
-    belowLineFillColorGrowing: 'rgba(41, 98, 255, 0.12)', // fill under line when growing
-    belowLineFillColorFalling: 'rgba(41, 98, 255, 0.12)', // fill under line when falling
+    colorTheme: 'dark',
+    dateRange: '12M',
+    locale: 'en',
+    largeChartUrl: '',
+    isTransparent: true,
+    showFloatingTooltip: true,
+    plotLineColorGrowing: '#0FEDBE',
+    plotLineColorFalling: '#0FEDBE',
+    gridLineColor: 'rgba(240, 243, 250, 0)',
+    scaleFontColor: '#DBDBDB',
+    belowLineFillColorGrowing: 'rgba(41, 98, 255, 0.12)',
+    belowLineFillColorFalling: 'rgba(41, 98, 255, 0.12)',
     belowLineFillColorGrowingBottom: 'rgba(41, 98, 255, 0)',
     belowLineFillColorFallingBottom: 'rgba(41, 98, 255, 0)',
-    symbolActiveColor: 'rgba(15, 237, 190, 0.05)', // highlight color for active symbol
+    symbolActiveColor: 'rgba(15, 237, 190, 0.05)',
     tabs: [
         {
-            title: 'Financial',
+            title: 'Overview',
             symbols: [
-                { s: 'NYSE:JPM', d: 'JPMorgan Chase' },
-                { s: 'NYSE:WFC', d: 'Wells Fargo Co New' },
-                { s: 'NYSE:BAC', d: 'Bank Amer Corp' },
-                { s: 'NYSE:HSBC', d: 'Hsbc Hldgs Plc' },
-                { s: 'NYSE:C', d: 'Citigroup Inc' },
-                { s: 'NYSE:MA', d: 'Mastercard Incorporated' },
+                { s: 'CRYPTOCAP:TOTAL', d: 'Total Market Cap' },
+                { s: 'BITSTAMP:BTCUSD', d: 'Bitcoin / USD' },
+                { s: 'BITSTAMP:ETHUSD', d: 'Ethereum / USD' },
+                { s: 'COINBASE:SOLUSD', d: 'Solana / USD' },
+                { s: 'BINANCE:AVAXUSD', d: 'Avalanche / USD' },
+                { s: 'COINBASE:UNIUSD', d: 'Uniswap / USD' },
             ],
         },
         {
-            title: 'Technology',
+            title: 'Bitcoin Pairs',
             symbols: [
-                { s: 'NASDAQ:AAPL', d: 'Apple' },
-                { s: 'NASDAQ:GOOGL', d: 'Alphabet' },
-                { s: 'NASDAQ:MSFT', d: 'Microsoft' },
-                { s: 'NASDAQ:FB', d: 'Meta Platforms' },
-                { s: 'NYSE:ORCL', d: 'Oracle Corp' },
-                { s: 'NASDAQ:INTC', d: 'Intel Corp' },
+                { s: 'BITSTAMP:BTCUSD', d: 'BTC / USD' },
+                { s: 'COINBASE:BTCEUR', d: 'BTC / EUR' },
+                { s: 'COINBASE:BTCGBP', d: 'BTC / GBP' },
+                { s: 'BITFLYER:BTCJPY', d: 'BTC / JPY' },
+                { s: 'BINANCE:BTCUSDT', d: 'BTC / USDT' },
             ],
         },
         {
-            title: 'Services',
+            title: 'Ethereum Pairs',
             symbols: [
-                { s: 'NASDAQ:AMZN', d: 'Amazon' },
-                { s: 'NYSE:BABA', d: 'Alibaba Group Hldg Ltd' },
-                { s: 'NYSE:T', d: 'At&t Inc' },
-                { s: 'NYSE:WMT', d: 'Walmart' },
-                { s: 'NYSE:V', d: 'Visa' },
+                { s: 'BITSTAMP:ETHUSD', d: 'ETH / USD' },
+                { s: 'KRAKEN:ETHEUR', d: 'ETH / EUR' },
+                { s: 'COINBASE:ETHGBP', d: 'ETH / GBP' },
+                { s: 'BINANCE:ETHBTC', d: 'ETH / BTC' },
+                { s: 'BINANCE:ETHUSDT', d: 'ETH / USDT' },
             ],
         },
     ],
-    support_host: 'https://www.tradingview.com', // TradingView host
-    backgroundColor: '#141414', // background color
-    width: '100%', // full width
-    height: 600, // height in px
-    showSymbolLogo: true, // show logo next to symbols
-    showChart: true, // display mini chart
+    support_host: 'https://www.tradingview.com',
+    backgroundColor: '#141414',
+    width: '100%',
+    height: 600,
+    showSymbolLogo: true,
+    showChart: true,
 };
 
 export const HEATMAP_WIDGET_CONFIG = {
-    dataSource: 'SPX500',
-    blockSize: 'market_cap_basic',
-    blockColor: 'change',
-    grouping: 'sector',
-    isTransparent: true,
+    dataSource: 'Crypto',  // changed from stock index to crypto
+    blockSize: 'market_cap_calc',
+    blockColor: '24h_close_change | 5',
     locale: 'en',
     symbolUrl: '',
     colorTheme: 'dark',
-    exchanges: [],
     hasTopBar: false,
     isDataSetEnabled: false,
     isZoomEnabled: true,
@@ -120,13 +116,13 @@ export const TOP_STORIES_WIDGET_CONFIG = {
     colorTheme: 'dark',
     isTransparent: true,
     locale: 'en',
-    market: 'stock',
+    market: 'crypto',  // change from 'stock' to 'crypto'
     width: '100%',
     height: '600',
 };
 
 export const MARKET_DATA_WIDGET_CONFIG = {
-    title: 'Stocks',
+    title: 'Cryptocurrencies',
     width: '100%',
     height: 600,
     locale: 'en',
@@ -136,39 +132,39 @@ export const MARKET_DATA_WIDGET_CONFIG = {
     backgroundColor: '#0F0F0F',
     symbolsGroups: [
         {
-            name: 'Financial',
+            name: 'Overview',
             symbols: [
-                { name: 'NYSE:JPM', displayName: 'JPMorgan Chase' },
-                { name: 'NYSE:WFC', displayName: 'Wells Fargo Co New' },
-                { name: 'NYSE:BAC', displayName: 'Bank Amer Corp' },
-                { name: 'NYSE:HSBC', displayName: 'Hsbc Hldgs Plc' },
-                { name: 'NYSE:C', displayName: 'Citigroup Inc' },
-                { name: 'NYSE:MA', displayName: 'Mastercard Incorporated' },
+                { name: 'CRYPTOCAP:TOTAL', displayName: 'Total Market Cap' },
+                { name: 'BITSTAMP:BTCUSD', displayName: 'Bitcoin / USD' },
+                { name: 'BITSTAMP:ETHUSD', displayName: 'Ethereum / USD' },
+                { name: 'COINBASE:SOLUSD', displayName: 'Solana / USD' },
+                { name: 'BINANCE:AVAXUSD', displayName: 'Avalanche / USD' },
+                { name: 'COINBASE:UNIUSD', displayName: 'Uniswap / USD' },
             ],
         },
         {
-            name: 'Technology',
+            name: 'Bitcoin Pairs',
             symbols: [
-                { name: 'NASDAQ:AAPL', displayName: 'Apple' },
-                { name: 'NASDAQ:GOOGL', displayName: 'Alphabet' },
-                { name: 'NASDAQ:MSFT', displayName: 'Microsoft' },
-                { name: 'NASDAQ:FB', displayName: 'Meta Platforms' },
-                { name: 'NYSE:ORCL', displayName: 'Oracle Corp' },
-                { name: 'NASDAQ:INTC', displayName: 'Intel Corp' },
+                { name: 'BITSTAMP:BTCUSD', displayName: 'BTC / USD' },
+                { name: 'COINBASE:BTCEUR', displayName: 'BTC / EUR' },
+                { name: 'COINBASE:BTCGBP', displayName: 'BTC / GBP' },
+                { name: 'BITFLYER:BTCJPY', displayName: 'BTC / JPY' },
+                { name: 'BINANCE:BTCUSDT', displayName: 'BTC / USDT' },
             ],
         },
         {
-            name: 'Services',
+            name: 'Ethereum Pairs',
             symbols: [
-                { name: 'NASDAQ:AMZN', displayName: 'Amazon' },
-                { name: 'NYSE:BABA', displayName: 'Alibaba Group Hldg Ltd' },
-                { name: 'NYSE:T', displayName: 'At&t Inc' },
-                { name: 'NYSE:WMT', displayName: 'Walmart' },
-                { name: 'NYSE:V', displayName: 'Visa' },
+                { name: 'BITSTAMP:ETHUSD', displayName: 'ETH / USD' },
+                { name: 'KRAKEN:ETHEUR', displayName: 'ETH / EUR' },
+                { name: 'COINBASE:ETHGBP', displayName: 'ETH / GBP' },
+                { name: 'BINANCE:ETHBTC', displayName: 'ETH / BTC' },
+                { name: 'BINANCE:ETHUSDT', displayName: 'ETH / USDT' },
             ],
         },
     ],
 };
+
 
 export const SYMBOL_INFO_WIDGET_CONFIG = (symbol: string) => ({
     symbol: symbol.toUpperCase(),
@@ -262,67 +258,69 @@ export const COMPANY_FINANCIALS_WIDGET_CONFIG = (symbol: string) => ({
     largeChartUrl: '',
 });
 
-export const POPULAR_STOCK_SYMBOLS = [
-    // Tech Giants (the big technology companies)
-    'AAPL',
-    'MSFT',
-    'GOOGL',
-    'AMZN',
-    'TSLA',
-    'META',
-    'NVDA',
-    'NFLX',
-    'ORCL',
-    'CRM',
+export const POPULAR_CRYPTO_SYMBOLS = [
+    // Major Cryptocurrencies (Top Market Cap)
+    'BTC',   // Bitcoin
+    'ETH',   // Ethereum
+    'BNB',   // Binance Coin
+    'SOL',   // Solana
+    'XRP',   // Ripple
+    'ADA',   // Cardano
+    'DOGE',  // Dogecoin
+    'AVAX',  // Avalanche
+    'TRX',   // TRON
+    'DOT',   // Polkadot
 
-    // Growing Tech Companies
-    'ADBE',
-    'INTC',
-    'AMD',
-    'PYPL',
-    'UBER',
-    'ZOOM',
-    'SPOT',
-    'SQ',
-    'SHOP',
-    'ROKU',
+    // Layer-2 & Infrastructure Projects
+    'MATIC', // Polygon
+    'ARB',   // Arbitrum
+    'OP',    // Optimism
+    'TIA',   // Celestia
+    'INJ',   // Injective
+    'LINK',  // Chainlink
+    'ATOM',  // Cosmos
+    'FTM',   // Fantom
+    'NEAR',  // NEAR Protocol
+    'AAVE',  // Aave
+    
+    // AI, Metaverse & Gaming Tokens
+    'RNDR',  // Render
+    'AGIX',  // SingularityNET
+    'FET',   // Fetch.ai
+    'GALA',  // Gala Games
+    'SAND',  // The Sandbox
+    'MANA',  // Decentraland
+    'IMX',   // Immutable X
+    'APE',   // ApeCoin
+    'WLD',   // Worldcoin
+    'PYTH',  // Pyth Network
 
-    // Newer Tech Companies
-    'SNOW',
-    'PLTR',
-    'COIN',
-    'RBLX',
-    'DDOG',
-    'CRWD',
-    'NET',
-    'OKTA',
-    'TWLO',
-    'ZM',
+    // Emerging Altcoins & Ecosystem Tokens
+    'JUP',   // Jupiter
+    'BONK',  // Bonk
+    'PEPE',  // Pepe
+    'SEI',   // Sei Network
+    'SKL',   // SKALE
+    'ROSE',  // Oasis Network
+    'EGLD',  // MultiversX
+    'XLM',   // Stellar
+    'FIL',   // Filecoin
+    'AR',    // Arweave
 
-    // Consumer & Delivery Apps
-    'DOCU',
-    'PTON',
-    'PINS',
-    'SNAP',
-    'LYFT',
-    'DASH',
-    'ABNB',
-    'RIVN',
-    'LCID',
-    'NIO',
+    // DeFi & Web3 Platforms
+    'UNI',   // Uniswap
+    'SUSHI', // SushiSwap
+    'CAKE',  // PancakeSwap
+    'CRV',   // Curve DAO
+    'LDO',   // Lido DAO
+    'RUNE',  // ThorChain
+    'DYDX',  // dYdX
+    'GMX',   // GMX
+    '1INCH', // 1inch
+    'COMP',  // Compound
 
-    // International Companies
-    'XPEV',
-    'LI',
-    'BABA',
-    'JD',
-    'PDD',
-    'TME',
-    'BILI',
-    'DIDI',
-    'GRAB',
-    'SE',
 ];
+
 
 export const NO_MARKET_NEWS =
     '<p class="mobile-text" style="margin:0 0 20px 0;font-size:16px;line-height:1.6;color:#4b5563;">No market news available today. Please check back tomorrow.</p>';
